@@ -1,15 +1,9 @@
 package;
 
-#if cpp
-import cpp.Lib;
-#elseif neko
-import neko.Lib;
-#else
-import nme.Lib;
-#end
+import openfl.Lib;
 
 #if android
-import nme.JNI;
+import openfl.utils.JNI;
 #end
 
 class NativeTest
@@ -33,7 +27,7 @@ class NativeTest
 		#if android
 		if(androidAlert == null)
 		{
-			androidAlert = nme.JNI.createStaticMethod("NativeTest", "showAlert", "(Ljava/lang/String;Ljava/lang/String;)V", true);
+			androidAlert = JNI.createStaticMethod("NativeTest", "showAlert", "(Ljava/lang/String;Ljava/lang/String;)V", true);
 		}
 		
 		androidAlert([title, message]);
@@ -45,6 +39,6 @@ class NativeTest
 	#end
 
 	#if(cpp && mobile && !android)
-	static var iosAlert = nme.Loader.load("ios_alert", 2);
+	static var iosAlert = Lib.load("nativetest", "ios_alert", 2);
 	#end
 }
