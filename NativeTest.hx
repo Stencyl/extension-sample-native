@@ -3,7 +3,7 @@ package;
 import openfl.Lib;
 
 #if android
-import openfl.utils.JNI;
+import lime.system.JNI;
 #end
 
 class NativeTest
