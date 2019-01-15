@@ -20,7 +20,7 @@ class NativeTest
 	
 	private static function delayAlert():Void
 	{
-		#if(cpp && mobile && !android)
+		#if ios
 		iosAlert(title, message);
 		#end
 		
@@ -38,7 +38,7 @@ class NativeTest
 	private static var androidAlert:Dynamic;
 	#end
 
-	#if(cpp && mobile && !android)
+	#if ios
 	static var iosAlert = Lib.load("nativetest", "ios_alert", 2);
 	#end
 }
