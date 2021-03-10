@@ -1,3 +1,4 @@
+id=com.example.extension-native
 name=Test Extension (Native)
 description=Shows how to make a native extension. Implements Alerts.
 author=Jon
